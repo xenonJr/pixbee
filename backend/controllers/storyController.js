@@ -1,4 +1,5 @@
-const { runOllamaStoryGen } = require('../services/ollamaService');
+// storyController.js
+import { runOllamaStoryGen } from '../services/ollamaService.js';
 
 async function generateStory(req, res) {
   try {
@@ -13,4 +14,4 @@ async function generateStory(req, res) {
   }
 }
 
-module.exports = { generateStory };
+export { generateStory };

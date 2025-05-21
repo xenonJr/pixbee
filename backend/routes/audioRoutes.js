@@ -1,7 +1,9 @@
-const express = require('express');
+// audioRoutes.js
+import express from 'express';
+import { generateAudio } from '../controllers/audioController.js';
+
 const router = express.Router();
-const { generateAudio } = require('../controllers/audioController');
 
 router.post('/generate', generateAudio);
 
-module.exports = router;
+export default router;

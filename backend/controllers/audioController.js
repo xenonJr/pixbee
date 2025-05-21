@@ -1,4 +1,5 @@
-const { generateWav } = require('../services/ttsService');
+// audioController.js
+import { generateWav } from '../services/ttsService.js';
 
 async function generateAudio(req, res) {
   const { narration, sceneId } = req.body;
@@ -16,4 +17,4 @@ async function generateAudio(req, res) {
   }
 }
 
-module.exports = { generateAudio };
+export { generateAudio };

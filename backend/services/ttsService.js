@@ -1,6 +1,11 @@
-const { spawn } = require('child_process');
-const path = require('path');
-const fs = require('fs');
+// ttsService.js
+import { spawn } from 'child_process';
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const generateWav = (text, sceneId) => {
     return new Promise((resolve, reject) => {
@@ -32,7 +37,6 @@ const generateWav = (text, sceneId) => {
         resolve(outputPath);
       });
     });
-  };
-  
+};
 
-module.exports = { generateWav };
+export { generateWav };

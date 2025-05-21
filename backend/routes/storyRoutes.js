@@ -1,7 +1,9 @@
-const express = require('express');
+// storyRoutes.js
+import express from 'express';
+import { generateStory } from '../controllers/storyController.js';
+
 const router = express.Router();
-const { generateStory } = require('../controllers/storyController');
 
 router.post('/generate', generateStory);
 
-module.exports = router;
+export default router;

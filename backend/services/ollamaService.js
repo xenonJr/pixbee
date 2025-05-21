@@ -1,4 +1,5 @@
-const { spawn } = require('child_process');
+// ollamaService.js
+import { spawn } from 'child_process';
 
 function runOllamaStoryGen(prompt) {
   return new Promise((resolve, reject) => {
@@ -17,9 +18,9 @@ function runOllamaStoryGen(prompt) {
       if (code !== 0) return reject(new Error(`Ollama exited with code ${code}`));
       
       try {
-        console.log('Raw Ollama output:', result);  // 👈 add this before JSON.parse  
+        console.log('Raw Ollama output:', result);  
         const parsed = JSON.parse(result);
-        resolve(parsed); // should be { title: "...", scenes: [...] }
+        resolve(parsed);
       } catch (e) {
         console.error('❌ JSON Parse Error:', e);
         console.error('Received raw text:', result);
@@ -57,4 +58,4 @@ Return the result in the following JSON format only:
   });
 }
 
-module.exports = { runOllamaStoryGen };
+export { runOllamaStoryGen };
