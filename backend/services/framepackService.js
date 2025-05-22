@@ -98,10 +98,10 @@ async function generateVideo(imagePath, sceneId) {
         prompt: "Cinematic, detailed, high quality animation", 
         n_prompt: "Blurry, low quality, distorted",
         seed: 42,
-        total_second_length: 4,
+        total_second_length: 2,
         latent_window_size: 9,
         steps: 25,
-        cfg: 1,
+        cfg: 10,
         gs: 10,
         rs: 0,
         gpu_memory_preservation: 6,
@@ -118,7 +118,7 @@ async function generateVideo(imagePath, sceneId) {
     
     // Wait for a new video to appear in the output directory
     console.log(`Waiting for new video to appear in ${framepackOutputPath}...`);
-    const newVideoAppeared = await waitForNewVideo(framepackOutputPath, 180000); // Wait up to 3 minutes
+    const newVideoAppeared = await waitForNewVideo(framepackOutputPath, 720000); // Wait up to 3 minutes
     
     if (!newVideoAppeared) {
       console.error('❌ No new video appeared within the timeout period');
